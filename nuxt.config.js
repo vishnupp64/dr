@@ -66,5 +66,16 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: { transpile: ['vue-youtube-embed'] }
+  build: {
+    transpile: ['vue-youtube-embed'],
+    extend(config, { isDev }) {
+      // webpack 4 defaults to md4 hashing, which OpenSSL 3 (Node 17+)
+      // removed. Vercel builds with Node 24 -> use sha256 instead.
+      config.output.hashFunction = 'sha256'
+      // ModuleConcatenationPlugin hardcodes md4 internally, so disable it.
+      if (!isDev && config.optimization) {
+        config.optimization.concatenateModules = false
+      }
+    }
+  }
 };
