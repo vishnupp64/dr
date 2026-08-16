@@ -71,36 +71,42 @@ export default {
 
 <style scoped>
 .web_name {
-  margin-top: 1rem;
-  font-family: IBM Plex Sans;
+  margin-top: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-style: normal;
-  font-weight: 500;
-  font-size: 2rem;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-
-  color: #1567ff !important;
+  color: #0f172a !important;
   padding: 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
+.web_name:hover { color: #0284c7 !important; }
 
 /* HEADER */
 
 .template_cover_wrpr {
   width: 100%;
   float: left;
-  padding-top: 55px;
+  padding-top: 60px;
 }
 
 .header_wrpr {
   width: 100%;
   float: left;
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
   position: fixed;
   left: 0;
   top: 0;
-  height: 55px;
+  height: 60px;
   z-index: 100;
-  background-color: #fff;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: background 0.3s ease;
 }
 
 .header_wrpr .column {
@@ -138,19 +144,21 @@ export default {
 .nav-link {
   width: 100%;
   float: left;
-  font-size: 1.5rem;
-  font-weight: 400;
-  font-family: IBM Plex Sans;
-  color: #242424;
-  transition: color 0.3s ease-in-out;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #475569;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
 }
-
-.nav-link:hover {
-  color: #1567ff;
-}
-
-.nav li.active .nav-link {
-  color: #1567ff;
+.nav-link:hover, .nav-link.nuxt-link-active {
+  color: #0284c7;
+  border-bottom-color: #0284c7;
 }
 
 .hambergur {

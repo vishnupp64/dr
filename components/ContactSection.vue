@@ -16,5 +16,7 @@
 }
 .container {
   font-family: IBM Plex Sans Condensed;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
 }
 </style>

@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="container main_content">
+    <div class="container-div main_content">
       <!-- Invention Grid -->
       <div class="invention_cover">
         <div class="invention_grid" v-if="filteredProducts.length > 0">
@@ -101,6 +101,12 @@ export default {
 </script>
 
 <style scoped>
+.container-div{
+  margin: 0 auto;
+  padding: 0 2.0rem;
+  position: relative;
+  width: 100%;
+}
 .invention_page {
   width: 100%;
   background: #f8fafc;
