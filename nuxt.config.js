@@ -28,7 +28,7 @@ export default {
   css: ["normalize.css/normalize.css", "milligram/dist/milligram.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-youtube-player.js', '~plugins/vue-gallery.client.js'],
+  plugins: ['~/plugins/vue-youtube-player.client.js', '~plugins/vue-gallery.client.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
