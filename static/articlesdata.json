@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Panicker's Vacuum Suction Haemostatic Device – A Novel Approach",
+    "journal": "International Medical Journal",
+    "region": "Oman",
+    "year": "2022",
+    "description": "A novel haemostatic device for obstetric haemorrhage management, validated in clinical practice in Oman.",
+    "tags": ["Haemostasis", "Obstetrics", "Device"],
+    "file": "Panickers_vacuum_suction_hemostatic_device-_a_nov- Oman.pdf"
+  },
+  {
+    "id": 2,
+    "title": "Brief Communication – IJCP April 2020",
+    "journal": "Indian Journal of Clinical Practice",
+    "region": "Haryana & Rajasthan",
+    "year": "2020",
+    "description": "Brief communication published in IJCP covering clinical applications and outcomes across Haryana and Rajasthan.",
+    "tags": ["Clinical Practice", "Haryana", "Rajasthan"],
+    "file": "10.BriefCommunication_IJCP_April20Haryana  rajasthan.pdf"
+  },
+  {
+    "id": 3,
+    "title": "JSAFOG – Volume 15, Article 395",
+    "journal": "Journal of South Asian Federation of Obstetrics & Gynaecology",
+    "region": "Tamil Nadu",
+    "year": "2023",
+    "description": "Published in JSAFOG highlighting surgical innovation outcomes in obstetrics and gynaecology practice in Tamil Nadu.",
+    "tags": ["Obstetrics", "Gynaecology", "Tamil Nadu"],
+    "file": "JSAFOG-15-395 Tamil Nadu.pdf"
+  },
+  {
+    "id": 4,
+    "title": "Article – Vol. 13, Issue 10, pp. 676–681 (2024)",
+    "journal": "Medical Research Journal",
+    "region": "Karnataka",
+    "year": "2024",
+    "description": "Peer-reviewed research article documenting clinical results of Dr. Panicker's instruments in Karnataka hospitals.",
+    "tags": ["Research", "Karnataka"],
+    "file": "116vol13issue10pp676-681.20241028041832- karnataka.pdf"
+  },
+  {
+    "id": 5,
+    "title": "Research Article – 2017",
+    "journal": "International Surgical Journal",
+    "region": "Kerala",
+    "year": "2017",
+    "description": "Peer-reviewed article presenting findings on the clinical use of Dr. Panicker's innovations in Kerala.",
+    "tags": ["Surgery", "Kerala"],
+    "file": "13224_2017_Article_963- Kerala.pdf"
+  },
+  {
+    "id": 6,
+    "title": "Clinical Study – Uttar Pradesh",
+    "journal": "Indian Medical Journal",
+    "region": "Uttar Pradesh",
+    "year": "2021",
+    "description": "Clinical case study demonstrating effective use of novel surgical instruments across hospitals in Uttar Pradesh.",
+    "tags": ["Clinical Study", "Uttar Pradesh"],
+    "file": "2b7c287f73314ea384ef193eee8d5d2a- Uttar Pradesh.pdf"
+  },
+  {
+    "id": 7,
+    "title": "IJOGR – Vol. 13, Issue 2, Article 26823",
+    "journal": "International Journal of Obstetrics & Gynaecology Research",
+    "region": "India",
+    "year": "2023",
+    "description": "Comprehensive research publication in IJOGR showcasing outcomes from use of Dr. Panicker's medical devices.",
+    "tags": ["Obstetrics", "Gynaecology", "Research"],
+    "file": "ijogr_journal_volume_13_issue_2_article_26823.pdf"
+  },
+  {
+    "id": 8,
+    "title": "OBG Management Editorial – JADA System",
+    "journal": "OBG Management",
+    "region": "International",
+    "year": "2022",
+    "description": "Editorial discussing the JADA System and its relevance to innovative obstetric haemorrhage management solutions.",
+    "tags": ["JADA System", "Editorial", "Haemorrhage"],
+    "file": "obgm03508004_editorial Jada System.pdf"
+  },
+  {
+    "id": 9,
+    "title": "IJWHR – Article 72",
+    "journal": "International Journal of Women's Health Research",
+    "region": "New Delhi",
+    "year": "2021",
+    "description": "Published research in IJWHR covering women's health outcomes with novel surgical instruments, based in New Delhi.",
+    "tags": ["Women's Health", "New Delhi"],
+    "file": "pdf_IJWHR_72- New Delhi.pdf"
+  }
+]

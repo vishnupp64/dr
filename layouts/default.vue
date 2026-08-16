@@ -25,6 +25,9 @@
                 >
               </li>
               <li v-on:click="menu_click">
+                <nuxt-link class="nav-link" to="/articles">ARTICLES</nuxt-link>
+              </li>
+              <li v-on:click="menu_click">
                 <nuxt-link class="nav-link" to="/gallery">GALLERY</nuxt-link>
               </li>
             </ul>

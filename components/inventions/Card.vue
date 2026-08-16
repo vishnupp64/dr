@@ -2,7 +2,7 @@
   <div class="card_wrapper">
     <div class="img_container">
       <picture class="img_picture">
-        <source :srcset="`/inventions/${webpImage}`" type="image/webp" />
+        <source v-if="webpImage" :srcset="`/inventions/${webpImage}`" type="image/webp" />
         <img
           :src="`/inventions/${invention.img}`"
           :alt="invention.name"
@@ -40,7 +40,9 @@ export default {
   computed: {
     webpImage() {
       if (!this.invention || !this.invention.img) return "";
-      return this.invention.img.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+      // Only .jpg/.jpeg images have .webp counterparts — skip for .png
+      if (!/\.(jpg|jpeg)$/i.test(this.invention.img)) return "";
+      return this.invention.img.replace(/\.(jpg|jpeg)$/i, ".webp");
     }
   }
 };
