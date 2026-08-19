@@ -32,12 +32,12 @@
             <li><nuxt-link to="">BLOGS</nuxt-link></li>
           </ul>
           <h3 class="sub_heading">ADDRESS</h3>
-          <p class="address">KODUNGALLUR, THIRSSUR, KERALA</p>
+          <p class="address">Panicker's Hospital, Kodungallur, Thrissur 680664</p>
           <h3 class="sub_heading">Phone</h3>
           <a href="tel:+919447351590">+91-9447351590</a>
           <h3 class="sub_heading">E-Mail</h3>
-          <a href="mailto:drvpaniker@gmail.com?Subject=Hello%20User"
-            >VPANIKER@GMAIL.COM</a
+          <a href="mailto:drvpanicker@gmail.com?Subject=Hello%20User"
+            >drvpanicker@gmail.com</a
           >
         </div>
       </div> -->
@@ -81,22 +81,23 @@
         </div>
         <div class="column column-25">
           <h3 class="sub_heading">ADDRESS</h3>
-          <p class="address">KODUNGALLUR, <br>THIRSSUR,<br> KERALA</p>        
+          <p class="address">Panicker's Hospital,<br>Kodungallur, Thrissur<br>680664</p>        
         </div>
         <div class="column column-25">
           <h3 class="sub_heading">PHONE</h3>
-          <a href="tel:+919447351590">+91-9447351590</a>
+          <a href="tel:+919447351590" class="address">+91-9447351590</a>
         </div>
         <div class="column column-25">
           <h3 class="sub_heading">E-MAIL</h3>
-          <a href="mailto:drvpaniker@gmail.com?Subject=Hello%20User"
-            >VPANIKER@GMAIL.COM</a>  
+          <a class="address" href="mailto:drvpanicker@gmail.com?Subject=Hello%20User"
+            >drvpanicker@gmail.com</a
+          >  
         </div>
 
       </div>
       <div class="row">
         <div class="column">
-          <span class="copyright">© 2021 Copyright vpaniker.in</span>
+          <span class="copyright">© 2021 Copyright drvpanicker.in</span>
         </div>
       </div>
     </div>
@@ -193,7 +194,7 @@ h2 {
   font-family: IBM Plex Sans;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   line-height: 143%;
   /* or 20px */
 

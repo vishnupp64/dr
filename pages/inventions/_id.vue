@@ -67,9 +67,9 @@
       </div>
 
       <!-- Lower Split Section: Procedure Video Guide & Enquiry Form -->
-      <div class="lower_grid" :class="{ single_col: !product.video_id }">
+      <div class="lower_grid" :class="{ single_col: !videoEmbedUrl }">
         <!-- Video Reference Card (if available) -->
-        <div class="video_card" v-if="product.video_id">
+        <div class="video_card" v-if="videoEmbedUrl">
           <div class="card_header">
             <span class="header_icon">🎥</span>
             <h2>Procedure Video Guide</h2>
@@ -77,7 +77,7 @@
           <div class="video_wrapper">
             <div class="video_container">
               <iframe
-                :src="`https://www.youtube-nocookie.com/embed/${product.video_id}?rel=0`"
+                :src="videoEmbedUrl"
                 :title="`${product.name} Procedure Guide`"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -108,6 +108,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { getYouTubeEmbedUrl } from "~/utils/youtube";
 
 export default {
   data() {
@@ -125,6 +126,10 @@ export default {
     webpImage() {
       if (!this.product || !this.product.img) return "";
       return this.product.img.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+    },
+    videoEmbedUrl() {
+      if (!this.product) return null;
+      return getYouTubeEmbedUrl(this.product.video_url || this.product.video_id);
     }
   }
 };
