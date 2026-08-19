@@ -35,8 +35,8 @@
       <!-- Invention Grid -->
       <div class="invention_cover">
         <div class="invention_grid" v-if="filteredProducts.length > 0">
-          <div class="grid_item" v-for="p in filteredProducts" :key="p.id">
-            <InventionsCard :invention="p" :href="url(p)" />
+          <div class="grid_item" v-for="(p, index) in filteredProducts" :key="p.id">
+            <InventionsCard :invention="p" :href="url(p)" :cardIndex="index" />
           </div>
         </div>
 
@@ -140,10 +140,10 @@ export default {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #38bdf8;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  padding: 6px 16px;
+  padding: 6px 18px;
   border-radius: 9999px;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
@@ -169,7 +169,7 @@ export default {
 
 .hero_title {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
@@ -179,12 +179,12 @@ export default {
 
 .hero_subtitle {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 300;
   color: #cbd5e1;
-  max-width: 680px;
+  max-width: 740px;
   margin: 0 auto 2.5rem;
-  line-height: 1.6;
+  line-height: 1.75;
 }
 
 /* Search Bar */
@@ -213,7 +213,7 @@ export default {
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 9999px;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #0f172a;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   outline: none;
@@ -264,7 +264,7 @@ export default {
 /* Responsive Breakpoints */
 @media (max-width: 1440px) {
   .hero_title {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
 }
 
@@ -273,7 +273,10 @@ export default {
     padding: 4rem 1.25rem 3rem;
   }
   .hero_title {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
+  }
+  .hero_subtitle {
+    font-size: 1.25rem;
   }
   .invention_grid {
     grid-template-columns: repeat(2, 1fr);
@@ -286,10 +289,10 @@ export default {
     padding: 3.5rem 1rem 2.5rem;
   }
   .hero_title {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
   }
   .hero_subtitle {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin-bottom: 2rem;
   }
   .main_content {
@@ -309,23 +312,23 @@ export default {
     padding: 2.5rem 0.8rem 2rem;
   }
   .hero_badge {
-    font-size: 0.7rem;
-    padding: 5px 12px;
+    font-size: 0.8rem;
+    padding: 5px 14px;
     margin-bottom: 1rem;
     letter-spacing: 0.06em;
   }
   .hero_title {
-    font-size: 1.75rem;
+    font-size: 1.9rem;
     margin-bottom: 0.8rem;
   }
   .hero_subtitle {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1.05rem;
+    line-height: 1.6;
     margin-bottom: 1.5rem;
   }
   .search_input {
     padding: 12px 36px 12px 42px;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
   }
   .search_icon {
     left: 14px;
@@ -348,13 +351,13 @@ export default {
 
 @media (max-width: 360px) {
   .hero_title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   .hero_subtitle {
-    font-size: 0.88rem;
+    font-size: 0.95rem;
   }
   .search_input {
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     padding: 10px 30px 10px 36px;
   }
 }
@@ -375,14 +378,16 @@ export default {
 }
 
 .no_results h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #0f172a;
   margin-bottom: 0.5rem;
 }
 
 .no_results p {
+  font-size: 1.1rem;
   color: #64748b;
   margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
 
 .reset_search_btn {
@@ -418,7 +423,7 @@ export default {
 
 .End {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #94a3b8;
   letter-spacing: 0.08em;

@@ -1,14 +1,19 @@
 <template>
   <div class="card_wrapper">
     <div class="img_container">
-      <picture class="img_picture">
+      <!-- Skeleton shimmer shown until image loads -->
+      <div class="img_skeleton" :class="{ loaded: imgLoaded }"></div>
+      <picture class="img_picture" :class="{ visible: imgLoaded }">
         <source v-if="webpImage" :srcset="`/inventions/${webpImage}`" type="image/webp" />
         <img
           :src="`/inventions/${invention.img}`"
           :alt="invention.name"
-          loading="lazy"
+          :loading="eagerLoad ? 'eager' : 'lazy'"
+          decoding="async"
           width="600"
           height="400"
+          @load="imgLoaded = true"
+          @error="imgLoaded = true"
         />
       </picture>
       <div class="img_overlay"></div>
@@ -36,13 +41,24 @@
 
 <script>
 export default {
-  props: ["href", "invention"],
+  props: {
+    href: { type: String, required: true },
+    invention: { type: Object, required: true },
+    // Pass index from parent; first 3 cards load eagerly (above the fold)
+    cardIndex: { type: Number, default: 99 }
+  },
+  data() {
+    return { imgLoaded: false };
+  },
   computed: {
+    // Generate webp path for ALL image types (jpg, jpeg, png)
     webpImage() {
       if (!this.invention || !this.invention.img) return "";
-      // Only .jpg/.jpeg images have .webp counterparts — skip for .png
-      if (!/\.(jpg|jpeg)$/i.test(this.invention.img)) return "";
-      return this.invention.img.replace(/\.(jpg|jpeg)$/i, ".webp");
+      return this.invention.img.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+    },
+    // First 3 cards are likely above the fold — load them eagerly for better LCP
+    eagerLoad() {
+      return this.cardIndex < 3;
     }
   }
 };
@@ -83,12 +99,44 @@ export default {
   box-sizing: border-box;
 }
 
+/* Skeleton shimmer: visible by default, fades out once image loads */
+.img_skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 25%,
+    #e2e8f0 50%,
+    #f1f5f9 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+.img_skeleton.loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Picture starts invisible, fades in once loaded */
 .img_picture {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.img_picture.visible {
+  opacity: 1;
 }
 
 .img_container img {
@@ -127,7 +175,7 @@ export default {
 
 .title {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.35;
   color: #0f172a;
@@ -148,11 +196,11 @@ export default {
 
 .app_text {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-size: 0.98rem;
+  font-weight: 700;
   color: #0369a1;
   background: #f0f9ff;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 8px;
   margin-bottom: 1rem;
   border: 1px solid #e0f2fe;
@@ -169,9 +217,9 @@ export default {
 
 .description {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.75;
   color: #334155;
   margin-bottom: 1.4rem;
   display: -webkit-box;
@@ -200,7 +248,7 @@ export default {
   background: linear-gradient(135deg, #0284c7 0%, #0284c7 100%) !important;
   color: #ffffff !important;
   font-family: 'IBM Plex Sans', sans-serif !important;
-  font-size: 1rem !important;
+  font-size: 1.05rem !important;
   font-weight: 600 !important;
   border: none !important;
   border-radius: 12px !important;
@@ -236,10 +284,10 @@ export default {
     padding: 1.1rem;
   }
   .title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .badge {
-    font-size: 10px;
+    font-size: 11px;
     padding: 4px 10px;
   }
 }
